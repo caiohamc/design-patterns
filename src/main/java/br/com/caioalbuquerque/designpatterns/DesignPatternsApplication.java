@@ -1,9 +1,15 @@
 package br.com.caioalbuquerque.designpatterns;
 
-import br.com.caioalbuquerque.designpatterns.gof.strategy.Context;
-import br.com.caioalbuquerque.designpatterns.gof.strategy.login.LoginCertificateStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.strategy.login.LoginJWTStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.strategy.login.LoginData;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.CalculationContext;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.LoginContext;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationAdditionStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.CalculationData;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationDivisionStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationMultiplicationStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationSubtractionStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.login.LoginCertificateStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.LoginData;
+import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.login.LoginJWTStrategy;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,14 +27,30 @@ public class DesignPatternsApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		LoginJWTStrategy loginJWTStrategy = new LoginJWTStrategy();
-		Context contextJwt = new Context(loginJWTStrategy);
-		LoginData loginDataJWT = new LoginData("login.jwt");
-		contextJwt.login(loginDataJWT);
+		// STRATEGY PATTERN - Calculation
+		// ADD - mostly to maximize readability
+		CalculationAdditionStrategy calculationAdditionStrategy = new CalculationAdditionStrategy();
+		CalculationContext calculationContextAddition = new CalculationContext(calculationAdditionStrategy);
+		CalculationData calculationDataAddition = new CalculationData(10);
+		calculationContextAddition.calculate(calculationDataAddition);
+		// SUB - mostly to optimize writing
+		CalculationContext calcContextSub = new CalculationContext(new CalculationSubtractionStrategy());
+		calcContextSub.calculate(new CalculationData(10));
+		// MULT
+		CalculationContext calcContextMult = new CalculationContext(new CalculationMultiplicationStrategy());
+		calcContextMult.calculate(new CalculationData(10));
+		// DIV
+		CalculationContext calcContextDiv = new CalculationContext(new CalculationDivisionStrategy());
+		calcContextDiv.calculate(new CalculationData(10));
 
+		// STRATEGY PATTERN - Login
+		LoginJWTStrategy loginJWTStrategy = new LoginJWTStrategy();
+		LoginContext loginContextJwt = new LoginContext(loginJWTStrategy);
+		LoginData loginDataJWT = new LoginData("login.jwt");
+		loginContextJwt.login(loginDataJWT);
 		LoginCertificateStrategy loginCertificateStrategy = new LoginCertificateStrategy();
-		Context contextCertificate = new Context(loginCertificateStrategy);
+		LoginContext loginContextCertificate = new LoginContext(loginCertificateStrategy);
 		LoginData loginDataCertificate = new LoginData("login.cert");
-		contextCertificate.login(loginDataCertificate);
+		loginContextCertificate.login(loginDataCertificate);
 	}
 }
