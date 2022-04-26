@@ -1,6 +1,6 @@
-package br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts;
+package br.com.caioalbuquerque.designpatterns.gof.strategy.contexts;
 
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.interfaces.ILoginStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.interfaces.ILoginStrategy;
 
 /**
  * @author Caio Henrique Albuquerque

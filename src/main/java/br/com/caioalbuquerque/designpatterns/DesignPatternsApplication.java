@@ -1,15 +1,15 @@
 package br.com.caioalbuquerque.designpatterns;
 
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.CalculationContext;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.LoginContext;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationAdditionStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.CalculationData;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationDivisionStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationMultiplicationStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.calculation.CalculationSubtractionStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.login.LoginCertificateStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.contexts.LoginData;
-import br.com.caioalbuquerque.designpatterns.gof.patternstrategy.strategies.login.LoginJWTStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.contexts.CalculationContext;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.contexts.LoginContext;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.calculation.CalculationAdditionStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.contexts.CalculationData;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.calculation.CalculationDivisionStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.calculation.CalculationMultiplicationStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.calculation.CalculationSubtractionStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.login.LoginCertificateStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.contexts.LoginData;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.login.LoginJWTStrategy;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
