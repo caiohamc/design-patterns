@@ -1,8 +1,8 @@
 package br.com.caioalbuquerque.designpatterns;
 
 import br.com.caioalbuquerque.designpatterns.gof.strategy.Context;
-import br.com.caioalbuquerque.designpatterns.gof.strategy.login.CertificateLoginStrategy;
-import br.com.caioalbuquerque.designpatterns.gof.strategy.login.JWTLoginStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.login.LoginCertificateStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.strategy.login.LoginJWTStrategy;
 import br.com.caioalbuquerque.designpatterns.gof.strategy.login.LoginData;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,13 +21,13 @@ public class DesignPatternsApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		JWTLoginStrategy jwtLoginStrategy = new JWTLoginStrategy();
-		Context contextJwt = new Context(jwtLoginStrategy);
+		LoginJWTStrategy loginJWTStrategy = new LoginJWTStrategy();
+		Context contextJwt = new Context(loginJWTStrategy);
 		LoginData loginDataJWT = new LoginData("login.jwt");
 		contextJwt.login(loginDataJWT);
 
-		CertificateLoginStrategy certificateLoginStrategy = new CertificateLoginStrategy();
-		Context contextCertificate = new Context(certificateLoginStrategy);
+		LoginCertificateStrategy loginCertificateStrategy = new LoginCertificateStrategy();
+		Context contextCertificate = new Context(loginCertificateStrategy);
 		LoginData loginDataCertificate = new LoginData("login.cert");
 		contextCertificate.login(loginDataCertificate);
 	}

@@ -6,8 +6,8 @@ import org.jboss.logging.Logger;
  * @author Caio Henrique Albuquerque
  * @since 26/04/2022
  */
-public class CertificateLoginStrategy implements ILoginStrategy {
-    private static final Logger LOGGER = Logger.getLogger("A3CertificateLoginStrategy");
+public class LoginJWTStrategy implements ILoginStrategy {
+    private static final Logger LOGGER = Logger.getLogger("JWTLoginStrategy");
 
     @Override
     public void login(LoginData loginData) {
