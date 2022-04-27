@@ -1,7 +1,7 @@
-package br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.login;
+package br.com.caioalbuquerque.designpatterns.gof.comportamentais.strategy.strategies.login;
 
-import br.com.caioalbuquerque.designpatterns.gof.strategy.contexts.LoginData;
-import br.com.caioalbuquerque.designpatterns.gof.strategy.interfaces.ILoginStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.comportamentais.strategy.contexts.LoginData;
+import br.com.caioalbuquerque.designpatterns.gof.comportamentais.strategy.interfaces.ILoginStrategy;
 import org.jboss.logging.Logger;
 
 /**

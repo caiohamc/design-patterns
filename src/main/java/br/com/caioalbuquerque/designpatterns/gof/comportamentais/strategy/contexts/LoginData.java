@@ -1,4 +1,4 @@
-package br.com.caioalbuquerque.designpatterns.gof.strategy.contexts;
+package br.com.caioalbuquerque.designpatterns.gof.comportamentais.strategy.contexts;
 
 /**
  * @author Caio Henrique Albuquerque

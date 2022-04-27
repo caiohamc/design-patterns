@@ -1,7 +1,7 @@
-package br.com.caioalbuquerque.designpatterns.gof.strategy.strategies.calculation;
+package br.com.caioalbuquerque.designpatterns.gof.comportamentais.strategy.strategies.calculation;
 
-import br.com.caioalbuquerque.designpatterns.gof.strategy.contexts.CalculationData;
-import br.com.caioalbuquerque.designpatterns.gof.strategy.interfaces.ICalculationStrategy;
+import br.com.caioalbuquerque.designpatterns.gof.comportamentais.strategy.contexts.CalculationData;
+import br.com.caioalbuquerque.designpatterns.gof.comportamentais.strategy.interfaces.ICalculationStrategy;
 import org.jboss.logging.Logger;
 
 /**
